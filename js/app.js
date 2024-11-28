@@ -16,20 +16,13 @@
 //     return getRandomInt();
 // }
 
-function getComputerChoice() {
-    return Math.floor(Math.random() * 3);
-}
+const getComputerChoice = () => {
+    const choices = ["rock", "paper", "scissors"];
+    return choices[Math.floor(Math.random() * choices.length)];
+};
 
-if (getComputerChoice() == 0) {
-    computerSelection = "rock";
-} else if (getComputerChoice() == 1) {
-    computerSelection = "paper";
-} else {
-    computerSelection = "scissors";
-}
-
-console.log(computerSelection);
-
+const computerChoice = getComputerChoice();
+console.log(computerChoice);
 
 
 
