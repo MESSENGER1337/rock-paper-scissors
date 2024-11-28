@@ -3,14 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROCK PAPER SCISSORS</title>
+    <title>Rock Paper Scissors Lizard Spock</title>
+
+    <!-- Inline CSS for simplicity -->
+    <style>
+        /* Overall styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Styling for the choice buttons */
+        .choices button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Button hover effect for better user interaction */
+        .choices button:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Styling for the results and score sections */
+        .results, .score {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        /* Highlight text with bold */
+        strong {
+            color: #007BFF;
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- Page Title -->
+    <h1>Rock Paper Scissors Lizard Spock</h1>
+    <!-- Brief Instructions -->
+    <p>Click a button below to make your choice and play against the computer!</p>
 
+    <!-- Section for user choice buttons -->
+    <div class="choices">
+        <!-- Each button corresponds to a choice -->
+        <!-- Buttons call the JavaScript `playRound` function with the choice as an argument -->
+        <button onclick="playRound('rock')">Rock</button>
+        <button onclick="playRound('paper')">Paper</button>
+        <button onclick="playRound('scissors')">Scissors</button>
+        <button onclick="playRound('lizard')">Lizard</button>
+        <button onclick="playRound('spock')">Spock</button>
+    </div>
 
+    <!-- Section to display game results dynamically -->
+    <!-- JavaScript will update this content after each round -->
+    <div class="results">
+        <!-- Initially empty; updated dynamically -->
+    </div>
 
+    <!-- Section to display the score dynamically -->
+    <div class="score">
+        <!-- Initially empty; updated dynamically -->
+    </div>
 
+    <!-- Link to external JavaScript file -->
     <script src="js/app.js"></script>
 </body>
 </html>
