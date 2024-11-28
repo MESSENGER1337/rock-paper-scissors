@@ -7,39 +7,48 @@
 
 
 
+// Global array of choices
+const choices = ["rock", "paper", "scissors"];
 
+// Get human choice
+function getHumanChoice() {
+    let choiceIndex = parseInt(prompt("Enter your choice: 1 for rock, 2 for paper, 3 for scissors")) - 1;
+    if (choiceIndex >= 0 && choiceIndex < choices.length) {
+        return choices[choiceIndex]; // Map input to the choice array
+    } else {
+        console.log("Invalid input! Please choose a number between 1 and 3.");
+        return getHumanChoice(); // Retry if input is invalid
+    }
+}
 
-// a function that randomly returns “rock”, “paper” or “scissors”
-
-// function getComputerChoice() {
-//     // return Math.random(2);
-//     return getRandomInt();
-// }
-
+// Get computer choice
 const getComputerChoice = () => {
-    const choices = ["rock", "paper", "scissors"];
     return choices[Math.floor(Math.random() * choices.length)];
 };
 
-const computerChoice = getComputerChoice();
-console.log(computerChoice);
-
-
-
-
-
-const humanSelection = getHumanChoice();
-
-
-
-function playRound(humanChoice, computerChoice) {
-    // your code here!
+// Determine the winner
+function determineWinner(human, computer) {
+    if (human === computer) {
+        return "It's a tie!";
+    } else if (
+        (human === "rock" && computer === "scissors") ||
+        (human === "paper" && computer === "rock") ||
+        (human === "scissors" && computer === "paper")
+    ) {
+        return "You win!";
+    } else {
+        return "Computer wins!";
+    }
 }
-playRound(humanSelection, computerSelection);
 
+// Play the game
+const humanChoice = getHumanChoice();
+console.log(`You chose: ${humanChoice}`);
 
+const computerChoice = getComputerChoice();
+console.log(`Computer chose: ${computerChoice}`);
 
-
+console.log(determineWinner(humanChoice, computerChoice));
 
 
 
